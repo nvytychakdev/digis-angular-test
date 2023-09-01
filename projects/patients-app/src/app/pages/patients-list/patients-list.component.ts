@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
-import { PatientsListTableComponent } from '../../features/patients-list/patients-list-table/patients-list-table.component';
+import { PatientsListTableComponent } from '../../features/patients/patients-list-table/patients-list-table.component';
 
 
 @Component({

@@ -1,0 +1,35 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} {{element.lastName}} </td>
+  </ng-container>
+
+  <!-- Height Column -->
+  <ng-container matColumnDef="height">
+    <th mat-header-cell *matHeaderCellDef> Height </th>
+    <td mat-cell *matCellDef="let element"> {{element.moduleValues.height}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.moduleValues.weight}} </td>
+  </ng-container>
+
+  <!-- Sleep Column -->
+  <ng-container matColumnDef="sleep">
+    <th mat-header-cell *matHeaderCellDef> Sleep </th>
+    <td mat-cell *matCellDef="let element"> {{element.moduleValues.sleep}} </td>
+  </ng-container>
+
+  <!-- Steps Column -->
+  <ng-container matColumnDef="steps">
+    <th mat-header-cell *matHeaderCellDef> Steps </th>
+    <td mat-cell *matCellDef="let element"> {{element.moduleValues.steps}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onPatientSelected(row)"></tr>
+</table>

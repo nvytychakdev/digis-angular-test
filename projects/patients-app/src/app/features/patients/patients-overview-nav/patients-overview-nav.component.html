@@ -1,0 +1,7 @@
+
+<mat-toolbar color="primary" *ngIf="patients.selectedPatient$ | async as patient">
+  <button mat-icon-button aria-label="Back to the patients list" (click)="onBackClick()">
+    <mat-icon>arrow_backward</mat-icon>
+  </button>
+  <span>Overview of the patient</span>
+</mat-toolbar>

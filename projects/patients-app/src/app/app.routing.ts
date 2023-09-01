@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule, inject } from '@angular/core';
+import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
+import { PatientsService } from './features/patients/patients.service';
 
 export const APP_ROUTES: Routes = [
   {
@@ -8,12 +9,20 @@ export const APP_ROUTES: Routes = [
   },
   {
     path: ':patientId',
-    children: [
-      {
-        path: 'overview',
-        loadComponent: () => import('./pages/patients-overview/patients-overview.component').then(m => m.PatientsOverviewComponent)
+    resolve: {
+      patient: (route: ActivatedRouteSnapshot) => {
+        const patients = inject(PatientsService);
+        const foundPatient = patients.allPatients?.find(p => p.id === route.paramMap.get('patientId'));
+        if(foundPatient) patients.setSelectedPatient(foundPatient);
       }
-    ]
+    },
+    canDeactivate: [
+      () => {
+        inject(PatientsService).resetSelectedPatient();
+        return true;
+      }
+    ],
+    loadComponent: () => import('./pages/patients-overview/patients-overview.component').then(m => m.PatientsOverviewComponent)
   },
   {
     path: '**',
