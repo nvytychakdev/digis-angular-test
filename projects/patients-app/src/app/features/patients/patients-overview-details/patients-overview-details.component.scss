@@ -1,0 +1,37 @@
+.patients-overview-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: #fbfbfb;
+
+  .patients-overview-name {
+    font-size: 32px;
+  }
+  
+  .patients-overview-extras {
+    color: gray;
+  }
+}
+
+.patients-overview-modules {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  
+
+  .mat-mdc-card {
+    flex: 1;
+  }
+
+  .mat-mdc-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .patients-overview-modules-values {
+    font-size: 24px;
+  }
+}
