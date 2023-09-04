@@ -2,11 +2,6 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
-## Code scaffolding
-
-Run `ng generate component component-name --project patients-billing` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project patients-billing`.
-> Note: Don't forget to add `--project patients-billing` or else it will be added to the default project in your `angular.json` file. 
-
 ## Build
 
 Run `ng build patients-billing` to build the project. The build artifacts will be stored in the `dist/` directory.

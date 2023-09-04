@@ -17,8 +17,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "patients-billing": [
-        "dist/patients-billing"
+      "@billing": [
+        "dist/patients-billing",
+        "projects/patients-billing/src/public-api.ts"
       ]
     },
     "target": "ES2022",
