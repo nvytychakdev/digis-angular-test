@@ -3,6 +3,7 @@
     <div class="patients-overview-name">{{ patient.firstName }} {{ patient.lastName }}</div>
     <div class="patients-overview-extras">{{ patient.phoneNumber }}</div>
   </div>
+  
   <div class="patients-overview-modules">
     <mat-card *ngFor="let module of patient.moduleValues | keyvalue">
       <mat-card-content>

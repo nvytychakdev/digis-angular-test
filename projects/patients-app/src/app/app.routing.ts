@@ -1,5 +1,5 @@
-import { NgModule, inject } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterModule, Routes } from '@angular/router';
+import { inject } from '@angular/core';
+import { ActivatedRouteSnapshot, Routes } from '@angular/router';
 import { PatientsService } from './features/patients/patients.service';
 
 export const APP_ROUTES: Routes = [
