@@ -17,6 +17,10 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
+      "@app/*": [
+        "dist/patients-app",
+        "projects/patients-app/src/app/*"
+      ],
       "@billing": [
         "dist/patients-billing",
         "projects/patients-billing/src/public-api.ts"
