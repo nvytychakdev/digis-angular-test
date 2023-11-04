@@ -2,29 +2,29 @@
 
 This is a simple workspace for the patient application. Contains following projects:
 - `patients-app` - simple patients monitoring angular application.
-- `patients-billing` - billing library to track time spent observing single patient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
 ## Task requirements
 
-Develop simple time tracker with following behavior:
-- Any time user opens any patient from the list, time tracker should appread on the screen and start counting the time.
-- As soon as patient gets closed - tracker should be stopped and removed from the screen.
-- Each patient should have own time tracking data saved locally in a runtime within a single session. Means, any time application gets restarted, or browser's page refreshed, history should be erased.
+As we already have existing `patients-app` to manage patients, we would like to extend the functionality of this app to allow user's to track how much time they spend on each patient.
+So the goal of this task is to develop independent `patients-tracking` library that will provide full set of required services/components to work with time tracking for the patient.
 
-To develop such tracker use already prepared `patients-billing` library. General goal to achieve - is to make `patients-billing` plug'n'play and as much independent from the main application as possible.
-To achieve this, `patients-app` needs to be updated providing common interface to work with any kind of time trackers on the patient. On the other side `patients-billing` should implement this interface,
-and as soon as it gets imported into the application - time tracking should start working, extending `patients-app` with tracking functionality.  
+How the time tracking widget for a patients works:
+- Time tracker should be started any time user user opens patients overview page and widget should be visible for a user while tracking is ongoing.
+- Once user goes to the patients list the tracker should be stopped and widget should disappear.
+- Each patient should be tracked separately. Meaning that time tracking should depend on which patient gets observed by the user.
+- We should store how much time we spent for each patient in a runtime. Any page refresh or app restart should reset the data (no need to store it in browser for simplicity).
+- If user opens the same patient that was observed before - the time tracking should be restored where it was left off.
 
 ## Acceptance criteria
 
-- `patients-app` should contain common tracking interface
-- `patients-billing` should contain all required functionality for time tracking
-- `patients-billing` should be imported into the `patients-app`
+- `patients-app` should integrate patients tracking functionality
+- `patients-tracking` should contain all required functionality for time tracking
+- `patients-tracking` should be imported into the `patients-app`
 - time tracking should start when patient's overview page is visible for the user
 - time tracking widget should appear during time tracking, containing patient's tracking time
-- each patient should have own time to track (should not be persistent between page refreshes)
+- each patient should have own time to track
 - time tracking should stop when patients list page is visible for the user
 
 ## Development server
